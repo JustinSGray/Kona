@@ -1,5 +1,5 @@
 from numpy import sqrt
-from kona.linalg.vectors.common import DesignVector, StateVector, DualVector
+from kona.linalg.vectors.common import PrimalVector, StateVector, DualVector
 
 class ReducedKKTVector(object):
     """
@@ -9,7 +9,7 @@ class ReducedKKTVector(object):
     ----------
     _memory : KonaMemory
         All-knowing Kona memory manager.
-    _design : DesignVector
+    _design : PrimalVector
         Design component of the composite vector.
     _dual : DualVector
         Dual components of the composite vector.
@@ -17,12 +17,12 @@ class ReducedKKTVector(object):
     Parameters
     ----------
     memory: KonaMemory
-    design_vec : DesignVector
+    design_vec : PrimalVector
     dual_vec : DualVector
     """
     def __init__(self, memory, design_vec, dual_vec):
         self._memory = memory
-        if isinstance(designVec, DesignVector):
+        if isinstance(designVec, PrimalVector):
             self._design = design_vec
         else:
             raise TypeError('ReducedKKTVector() >> ' + \

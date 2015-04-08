@@ -155,7 +155,7 @@ class KonaVector(object):
         else:
             return sqrt(prod)
 
-class DesignVector(KonaVector):
+class PrimalVector(KonaVector):
     """
     Derived from the base abstracted vector. Contains member functions specific
     to design vectors.
